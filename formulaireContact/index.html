@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>Couriel, simple mailer</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+		<script>
+			$(document).ready(function(){
+				var from,subject,text;
+				$("#send_email").click(function(){
+					from=$("#from").val();
+					subject=$("#subject").val();
+					text=$("#content").val();
+
+					$("#message").text("Sending E-mail...Please wait");
+
+					$.get("http://localhost:3000/send",{from:from,subject:subject,text:text},function(data){
+
+						if(data=="sent")
+						{
+							$("#message").empty().html("<p>Email is been sent at </p>");
+						}
+
+					});
+				});
+			});
+		</script>
+
+	</head>
+		<body>
+			<center>
+			<div id="container">
+				<h1>Couriel, simple mailer</h1>
+				<div class="input-group-lg">
+					<input type="text" id="from" placeholder="Enter your E-mail"><br>
+
+				<input type="text" id="subject" placeholder="Write Subject"><br>
+				<textarea id="content" rows="5" cols="40" placeholder="Write what you want to send"></textarea><br>
+
+			<br>
+			<br>
+
+				<button id="send_email">Send Email</button><br>
+				<span id="message"></span>
+			</div>
+			</div>
+		</center>
+		</body>
+</html>
