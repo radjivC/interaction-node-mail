@@ -1,5 +1,5 @@
 {
-  "name": "email-node",
+  "name": "node-email-verification",
   "version": "1.0.0",
   "dependencies": {
     "nodemailer": "~0.7.1",
