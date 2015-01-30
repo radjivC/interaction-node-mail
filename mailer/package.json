@@ -1,5 +1,5 @@
 {
-  "name": "SendEmail",
+  "name": "node-mailer",
   "version": "1.0.0",
   "dependencies": {
     "nodemailer": "0.7.1",
