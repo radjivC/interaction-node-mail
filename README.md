@@ -17,4 +17,3 @@ and go to
 
 localhost:3000
 
-It's just example as tutorial, so no copyright, use it like you want.
